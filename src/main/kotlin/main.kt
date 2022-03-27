@@ -4,6 +4,7 @@ import kotlin.collections.ArrayList
 
 @ObsoleteCoroutinesApi
 fun main() = runBlocking {
+
     val scope = CoroutineScope(newFixedThreadPoolContext(countThreads, "Andon"))
 
     scope.launch {
@@ -23,12 +24,6 @@ fun main() = runBlocking {
     println("Запуск конвеера...")
     println("Чтобы остановить конвеер, нажмите 'q'")
 
-//    for (i in 1..producers)
-//        ProducerThread().start()
-//
-//    for (i in 1..consumers)
-//        ConsumerThread().start()
-
 
     do {
         val stop = input.next()
@@ -38,8 +33,6 @@ fun main() = runBlocking {
 
     println("Количество элементов в очереди: ${queue.itemCount()}")
 }
-
-
 
 
 private class ProducerThread: Thread() {
